@@ -8,7 +8,22 @@
 - An introduction to Anoma applications using the Taiga Simulator
 - Preview of Juvix compilation to arithmetic circuits using [vamp-ir](https://github.com/anoma/vamp-ir)
 
+## Table of Contents
+- [Installing Juvix](#installing-juvix)
+- [IDE Support](#ide-support)
+    - [VSCode](#vscode)
+    - [Emacs](#emacs)
+- [Language Introduction](#language-introduction)
+- [Applications](#applications)
+    - [Hello World!](#hello-world) ([Source Code](./hello-world/))
+    - [Arithmetic Circuits](#arithmetic-circuits) ([Source Code](./arithmetic-circuits/))
+    - [Anoma/Taiga Sudoku](#anoma-taiga-sudoku) ([Source Code](./taiga-sudoku/))
+
 ## Installing Juvix
+
+Use one of the following options to install Juvix on your machine. We support
+Linux on x86_64 architecture and macOS on both x86_64 and aarch64 (M1)
+architectures.
 
 ### macOS homebrew
 
@@ -32,23 +47,20 @@ There is a statically linked binary available at: https://github.com/anoma/juvix
 
 We will follow the tutorial at https://docs.juvix.org/dev/tutorials/learn/
 
-## Anoma and Taiga Applications
+## Applications
 
-The goal of Juvix is to be used to write applications for [Anoma](https://anoma.net).
+### Hello World
 
-Anoma is a system that coordinates transactions between users. 
+Compile and run the famous Hello World program:
 
-Applications in Anoma introduce resources that can be traded, and impose
-constraints on how transactions involving those resources can behave.
+``` shell
+juvix compile hello-world/HelloWorld.juvix && ./HelloWorld
+```
 
-Users submit transactions, which describe a preferred state of the system. Then
-the system resolves all user preferences so that the transactions balance
-and satisfy the constraints of applications.
+### Arithmetic Circuits
 
-Anoma applications that are built using the
-[Taiga](https://github.com/anoma/taiga) component use zero-knowledge proofs to
-hide sensitive information about transactions.
+### Anoma / Taiga Sudoku
 
-The implementation of Anoma is not complete. But we can use a
-[simulator](https://github.com/anoma/taiga-simulator) to show you how Anoma
-applications will work.
+A simulation of an [Anoma](https://anoma.net) application built using the
+[Taiga](https://github.com/anoma/taiga) execution model.
+
