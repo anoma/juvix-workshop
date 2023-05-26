@@ -27,6 +27,8 @@ architectures.
 
 ### macOS homebrew
 
+If you use the [Homebrew package manager](https://brew.sh) you can use our tap:
+
 ``` shell
 brew update
 brew tap anoma/juvix
@@ -35,13 +37,24 @@ brew install juvix
 
 ### Linux / macOS automatic installer
 
+To install for linux or macOS run the following in a terminal (as a non-root user):
+
+
 ``` shell
 curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/anoma/juvix-installer/main/juvix-installer.sh | sh
 ```
 
-### Linux manual installation
+It will install the Juvix compiler, the required LLVM toolchain, and setup your shell environment.
 
-There is a statically linked binary available at: https://github.com/anoma/juvix/releases/latest/download/juvix-linux-x86_64.tar.gz
+### Manual installation
+
+There are also binaries for the Juvix compiler available to download:
+
+| OS / Architecture                                                                                           |
+|-------------------------------------------------------------------------------------------------------------|
+| [Linux x86_64](https://github.com/anoma/juvix/releases/latest/download/juvix-linux-x86_64.tar.gz)           |
+| [macOS x86_64](https://github.com/anoma/juvix/releases/latest/download/juvix-macos-x86_64.tar.gz)           |
+| [macOS aarch64 (M1/M2)](https://github.com/anoma/juvix/releases/latest/download/juvix-macos-aarch64.tar.gz) |
 
 ## Language Introduction
 
