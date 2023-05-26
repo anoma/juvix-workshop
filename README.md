@@ -56,6 +56,8 @@ There are also binaries for the Juvix compiler available to download:
 | [macOS x86_64](https://github.com/anoma/juvix/releases/latest/download/juvix-macos-x86_64.tar.gz)           |
 | [macOS aarch64 (M1/M2)](https://github.com/anoma/juvix/releases/latest/download/juvix-macos-aarch64.tar.gz) |
 
+The Juvix compiler requires an LLVM toolchain to be present in your PATH.
+
 ## Language Introduction
 
 We will follow the tutorial at https://docs.juvix.org/dev/tutorials/learn/
