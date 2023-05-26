@@ -1,0 +1,5 @@
+dependencies:
+- .juvix-build/stdlib/
+name: hello-world
+main: HelloWorld.juvix
+version: 0.0.0
