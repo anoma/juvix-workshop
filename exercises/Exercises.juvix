@@ -3,20 +3,19 @@ module Exercises;
 
 import Stdlib.Prelude open public;
 import Stdlib.Data.Nat.Ord open public;
+
 import Stdlib.Data.Int.Ord as Int;
 
 -- Delete this function when you have completed the exercises
-terminating
-add-solution-here : {A : Type} -> A;
-add-solution-here := add-solution-here;
+axiom add-solution-here : {A : Type} -> A;
 
 --- Write a function that computes the exponentation n^m
 exp : Nat -> Nat -> Nat;
-exp := add-solution-here ;
+exp := add-solution-here;
 
 --- Write a function that checks if a ;Nat; is prime
 isPrime : Nat -> Bool;
-isPrime := add-solution-here; 
+isPrime := add-solution-here;
 
 --- Write a function that returns the last element in a list
 last : {A : Type} -> List A -> Maybe A;
@@ -40,6 +39,6 @@ countLeaves := add-solution-here;
 
 --- Write a function which checks if a ;Tree; is balanced.
 --- A ;Tree; is balanced if the number of leaves in the left and right subtree of every
---- node differ by at most 1. 
+--- node differ by at most 1.
 isBalanced : {A : Type} -> Tree A -> Bool;
 isBalanced := add-solution-here;
