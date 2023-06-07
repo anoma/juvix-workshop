@@ -15,7 +15,7 @@
 - [Workshop Exercises](#workshop-exercises)
 - [Juvix Programs](#juvix-programs)
     - [Hello World!](#hello-world) ([Source Code](./hello-world/))
-    - [Anoma Applications](#anoma-applications) ([Source Code](https://github.com/anoma/taiga-simulator))
+    - [Anoma Applications](#anoma-applications) ([Documentation](./anoma/) and [Source Code](https://github.com/anoma/taiga-simulator))
     - [Arithmetic Circuits](#arithmetic-circuits--zero-knowledge-proofs) ([Source Code](./arithmetic-circuits/))
 
 ## Introduction
@@ -112,9 +112,10 @@ juvix compile hello-world/HelloWorld.juvix && ./HelloWorld
 One of the goals of Juvix is to be used as language to write applications for
 the [Anoma protocol](https://anoma.net).
 
-We will explore [simulations](https://github.com/anoma/taiga-simulator) of an
-[Anoma](https://anoma.net) application built using the
-[Taiga](https://github.com/anoma/taiga) execution model.
+In [anoma/](./anoma/) we will explore the structure of
+[Anoma](https://anoma.net) applications built using the
+[Taiga](https://github.com/anoma/taiga) execution model and use the [taiga
+simulator](https://github.com/anoma/taiga-simulator) to test them.
 
 ### Arithmetic Circuits / Zero-knowledge Proofs
 
@@ -126,30 +127,4 @@ relate inputs and output of the program.
 Not all Juvix programs can be compiled to vamp-ir. Future releases of Juvix will
 improve vamp-ir support.
 
-For example, this is how to compile the [Juvix
-implementation](./arithmetic-circuits/MidSquareHash.juvix) of the mid-square
-hash algorithm:
-
-``` shell
-cd arithmetic-circuits
-juvix compile -t vampir MidSquareHash.juvix
-```
-
-The vamp-ir file can then be compiled to a PLONK circuit:
-
-``` shell
-vamp-ir plonk setup -m 10 -o params.pp
-vamp-ir plonk compile -u params.pp -s MidSquareHash.pir -o circuit.plonk
-```
-
-A zero-knowledge proof that `hash 1367` is equal to `3` can then be generated from the circuit:
-
-``` shell
-vamp-ir plonk prove -u params.pp -c circuit.plonk -o proof.plonk -i MidSquareHash.json
-```
-
-This proof can then be verified:
-
-``` shell
-vamp-ir plonk verify -u params.pp -c circuit.plonk -p proof.plonk
-```
+See [arithmetic-circuits/](./arithmetic-circuits/) for an example.
