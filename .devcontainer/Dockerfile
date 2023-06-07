@@ -33,13 +33,15 @@ RUN sudo bash -c 'curl https://get.wasmer.io -sSfL | sudo WASMER_DIR=/home/vscod
 # to be used by the juvix extension
 RUN sudo bash -c 'mkdir -p /home/vscode/.local/juvix'
 
+RUN sudo bash -c 'chmod -R a+rXw /home/vscode/.local/juvix'
+
 RUN sudo bash -c 'curl -s https://api.github.com/repos/anoma/juvix/releases/latest \
       | grep -a "browser_download_url.*linux" \
       | cut -d : -f 2,3 \
       | tr -d \" \
-      | wget --output-document juvix.tar.gz -qi - \
-      && tar xfv juvix.tar.gz --directory=/home/vscode/.local/bin/'
-
+      | wget --output-document juvix.zip -qi - \
+      && unzip juvix.zip \
+      && mv juvix /home/vscode/.local/bin/juvix'
 
 RUN sudo bash -c 'curl -s https://api.github.com/repos/anoma/geb/releases/latest \
       | grep -a "browser_download_url" \
