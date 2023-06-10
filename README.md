@@ -62,6 +62,12 @@ There are also binaries for the Juvix compiler available to download
 | [macOS x86_64](https://github.com/anoma/juvix/releases/latest/download/juvix-macos-x86_64.tar.gz)           |
 | [macOS aarch64 (M1/M2)](https://github.com/anoma/juvix/releases/latest/download/juvix-macos-aarch64.tar.gz) |
 
+### Online GitHub Workspace
+
+We have set up a GitHub codespace with a pre-configured workspace, allowing you to seamlessly dive into the workshop without the hassle of any installations.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anoma/juvix-eth-workshop?quickstart=1)
+
 ## IDE Setup
 
 ### Visual Studio Code
