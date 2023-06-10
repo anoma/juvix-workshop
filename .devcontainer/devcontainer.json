@@ -26,5 +26,6 @@
       "extensions": ["Heliax.juvix-mode"]
     }
   },
+  "extensions": ["Heliax.juvix-mode"],
   "remoteUser": "vscode"
 }
