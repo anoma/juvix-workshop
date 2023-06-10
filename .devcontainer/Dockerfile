@@ -35,13 +35,9 @@ RUN sudo bash -c 'mkdir -p /home/vscode/.local/juvix'
 
 RUN sudo bash -c 'chmod -R a+rXw /home/vscode/.local/juvix'
 
-RUN sudo bash -c 'curl -s https://api.github.com/repos/anoma/juvix/releases/latest \
-      | grep -a "browser_download_url.*linux" \
-      | cut -d : -f 2,3 \
-      | tr -d \" \
-      | wget --output-document juvix.zip -qi - \
-      && unzip juvix.zip \
-      && mv juvix /home/vscode/.local/bin/juvix'
+RUN sudo bash -c 'curl --proto "=https" --tlsv1.2 -sSf https://raw.githubusercontent.com/anoma/juvix-installer/main/juvix-installer.sh \
+      | sudo JUVIX_INSTALLER_ASSUME_YES=true sh \
+      && sudo mv /root/.local/bin/juvix /home/vscode/.local/bin/'
 
 RUN sudo bash -c 'curl -s https://api.github.com/repos/anoma/geb/releases/latest \
       | grep -a "browser_download_url" \
@@ -56,8 +52,8 @@ RUN sudo bash -c 'curl -s https://api.github.com/repos/anoma/vamp-ir/releases/la
       | grep -a "browser_download_url" \
       | cut -d : -f 2,3 \
       | tr -d \" \
-      | wget --output-document vamp-ir.tar.gz -qi - \
-      && tar xfv vamp-ir.tar.gz --directory=/home/vscode/.local/bin/'
+      | wget --output-document vamp-ir -qi - \
+      && mv vamp-ir /home/vscode/.local/bin/'
 
 RUN sudo bash -c 'chmod +x /home/vscode/.local/bin/vamp-ir'
 
