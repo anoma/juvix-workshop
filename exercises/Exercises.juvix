@@ -13,10 +13,6 @@ axiom add-solution-here : {A : Type} -> A;
 exp : Nat -> Nat -> Nat;
 exp := add-solution-here;
 
---- Write a function that checks if a ;Nat; is prime
-isPrime : Nat -> Bool;
-isPrime := add-solution-here;
-
 --- Write a function that returns the last element in a list
 last : {A : Type} -> List A -> Maybe A;
 last := add-solution-here;
@@ -58,3 +54,7 @@ countLeaves := add-solution-here;
 --- node differ by at most 1.
 isBalanced : {A : Type} -> Tree A -> Bool;
 isBalanced := add-solution-here;
+
+--- Write a function that checks if a ;Nat; is prime
+isPrime : Nat -> Bool;
+isPrime := add-solution-here;
