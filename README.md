@@ -5,6 +5,8 @@
   <a href="https://discord.gg/PfaaFVErHt"><img src="https://img.shields.io/discord/952881043520774194?logo=discord"/></a>
 </p>
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anoma/juvix-eth-workshop?quickstart=1)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Installing Juvix](#installing-juvix)
