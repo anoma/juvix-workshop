@@ -18,7 +18,8 @@
         "juvix-mode.opts": {
           "internalBuildDir": "/workspaces/juvix-eth-workshop/.juvix-build"
         },
-        "juvix-mode.bin.path": "/home/vscode/.local/bin/",
+        "juvix-mode.juvixBinPath": "/home/vscode/.local/bin/",
+        "juvix-mode.juvixBinName" : "juvix",
         "juvix-mode.input.languages": ["Juvix", "JuvixCore"],
         "juvix-mode.reloadReplOnSave": true,
         "juvix-mode.typecheckOn": "none"
