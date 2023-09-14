@@ -2,7 +2,7 @@
 
 This directory contains [source code](./MidSquareHash.juvix) implementing the mid-square hash function.
 
-Use following steps to compile the Juvix file to a vampir input and then use
+Use following steps to compile the Juvix file to a VampIR input and then use
 [vamp-ir](https://github.com/anoma/vamp-ir) to compile to a circuit, generate
 and verify a proof.
 

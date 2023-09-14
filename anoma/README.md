@@ -1,11 +1,11 @@
 
 # Anoma / Taiga
 
-[Taiga](https://github.com/anoma/taiga) is a component of Anoma that is used to
-produce valid state transition proposals. Taiga defines what a valid transaction
-is and provides the means to produce and verify transactions.
+[Taiga](https://github.com/anoma/taiga), a component of Anoma, is responsible
+for generating valid state transition proposals. It establishes the criteria for
+valid transactions and offers the tools to create and verify them.
 
-The parts of a transaction are are distributed and stored in an encrypted form.
+The parts of a transaction are distributed and stored in an encrypted form.
 
 Taiga is based on a [UTXO
 model](https://en.wikipedia.org/wiki/Unspent_transaction_output) and was heavily
@@ -56,7 +56,7 @@ and creates a new resource containing a logic function which encodes her intent,
 
 Bob independently publishes a _partial transaction_ to the network that encodes his intent.
 
-It comsumes:
+It consumes:
 
 * 1 **Dolphin** resource
 
@@ -102,7 +102,7 @@ In particular:
 
 * Solver create 2 **B** balances with Alice consume 2 **B**
 * Solver create 1 **Dolphin** balances with Bob consume 1 **Dolphin**
-* Sovler consume **Alice's logic resource** balances with Alice create **Alice's logic resource** 
+* Solver consume **Alice's logic resource** balances with Alice create **Alice's logic resource** 
 * Alice consume 1 **A** balances with Bob create 1 **A**
 
 So we conclude that the three partial transaction above together form a transaction.
@@ -119,10 +119,10 @@ code](https://github.com/anoma/taiga-simulator/blob/main/Apps/Sudoku.juvix).
 ## Overview
 
 For this application there is a _Dealer_ who coordinates the puzzle and a number
-of participants who all try to sovle the puzzle. The participants are rewarded
+of participants who all try to solve the puzzle. The participants are rewarded
 for each square of the puzzle they fill in correctly.
 
-There are resouce types **Sudoku** which represents a Sudoku grid and **Reward**
+There are resource types **Sudoku** which represents a Sudoku grid and **Reward**
 which is the token that participants receive for filling in correct squares.
 
 The Sudoku resource has a [logic
@@ -150,11 +150,11 @@ the puzzle.
 ## A Player Submits a Partial Solution
 
 A _player_ finds the _dealer_'s partial transaction on the network and publishes a
-new _partial transaction_ to fill in some of the missing squares.
+new _partial transaction_ to fill in some missing squares.
 
 The new partial transaction consumes:
 
-* A **Sudoku** resource which represents the current parital solution to the puzzle.
+* A **Sudoku** resource which represents the current partial solution to the puzzle.
 
 And creates:
 

@@ -128,11 +128,11 @@ simulator](https://github.com/anoma/taiga-simulator) to test them.
 ### Arithmetic Circuits / Zero-knowledge Proofs
 
 The Juvix compiler has a backend that targets the
-[vamp-ir](https://github.com/anoma/vamp-ir) arithmetic circuit intermediate
-language. `vamp-ir` can then be used to generate zero-knowledge proofs that
+[VampIR](https://github.com/anoma/vamp-ir) arithmetic circuit intermediate
+language. VampIR can then be used to generate zero-knowledge proofs that
 relate inputs and output of the program.
 
-Not all Juvix programs can be compiled to vamp-ir. Future releases of Juvix will
-improve vamp-ir support.
+Not all Juvix programs can be compiled to VampIR. Future releases of Juvix will
+improve VampIR support.
 
 See [arithmetic-circuits/](./arithmetic-circuits/) for an example.
