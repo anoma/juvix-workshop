@@ -1,5 +1,5 @@
-<h1> Juvix ETHPrague Workshop</h1>
-<h1><a href="https://bit.ly/juvix-eth">https://bit.ly/juvix-eth</a></h1>
+<h1> Juvix Workshop</h1>
+<h1><a href="http://bit.ly/juvix-workshop">http://bit.ly/juvix-workshop</a></h1>
 <img alt="tara mascot smiling" width="400" src="./.resources/tara-smiling.png">
 <p>
   <a href="https://discord.gg/PfaaFVErHt"><img src="https://img.shields.io/discord/952881043520774194?logo=discord"/></a>
@@ -51,7 +51,7 @@ brew install juvix
 To install for linux or macOS run the following in a terminal (as a non-root user):
 
 ``` shell
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/anoma/juvix-installer/main/juvix-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -sSfL https://get.juvix.org | sh
 ```
 
 ### Manual installation
