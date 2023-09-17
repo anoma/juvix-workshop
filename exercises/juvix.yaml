@@ -1,4 +1,2 @@
-dependencies:
-- .juvix-build/stdlib/
 name: exercises
 version: 0.0.0

@@ -1,60 +1,52 @@
 -- See https://docs.juvix.org/dev/tutorials/learn/#exercises for more exercises
 module Exercises;
 
-import Stdlib.Prelude open public;
-import Stdlib.Data.Nat.Ord open public;
+import Stdlib.Prelude open;
 
+import Stdlib.Data.Nat.Ord;
 import Stdlib.Data.Int.Ord as Int;
 
 -- Delete this function when you have completed the exercises
 axiom add-solution-here : {A : Type} -> A;
 
 --- Write a function that computes the exponentation n^m
-exp : Nat -> Nat -> Nat;
-exp := add-solution-here;
+exp : Nat -> Nat -> Nat := add-solution-here;
 
 --- Write a function that returns the last element in a list
-last : {A : Type} -> List A -> Maybe A;
-last := add-solution-here;
+last {A} : List A -> Maybe A := add-solution-here;
 
 --- Write a function that reverses a list
-rev : {A : Type} -> List A -> List A;
-rev := add-solution-here;
+rev {A} : List A -> List A := add-solution-here;
 
 --- Write a function that computes the maximum element in a list of natural numbers
-maximum : List Nat -> Nat;
-maximum := add-solution-here;
+maximum : List Nat -> Nat := add-solution-here;
 
 --- Write a function that computes the list of partial sums of a list of natural numbers
-sums : List Nat -> List Nat;
-sums := add-solution-here;
+sums : List Nat -> List Nat := add-solution-here;
 
 --- Write a function that return the first element in a list that satisfies a predicate
-findFirst : {A : Type} -> (A -> Bool) -> List A -> Maybe A;
-findFirst := add-solution-here;
+findFirst {A} : (A -> Bool) -> List A -> Maybe A :=
+  add-solution-here;
 
 --- Write a function that returns the longest initial sublist of elements that satisfy a predicate
-takeWhile : {A : Type} -> (A -> Bool) -> List A -> List A;
-takeWhile := add-solution-here;
+takeWhile {A} : (A -> Bool) -> List A -> List A :=
+  add-solution-here;
 
--- Write a function which computes the length of a longest continuous sublist of elements satisfying a predicate
-longest : {A : Type} -> (A -> Bool) -> List A -> Nat;
-longest := add-solution-here;
+--- Write a function which computes the length of a longest continuous sublist of elements satisfying a predicate
+longest {A} : (A -> Bool) -> List A -> Nat :=
+  add-solution-here;
 
 type Tree (A : Type) :=
-  | leaf : A -> Tree A
-  | node : Tree A -> Tree A -> Tree A;
+  | leaf A
+  | node (Tree A) (Tree A);
 
 --- Write a function that counts the total number of leaves in a tree
-countLeaves : {A : Type} -> Tree A -> Nat;
-countLeaves := add-solution-here;
+countLeaves {A} : Tree A -> Nat := add-solution-here;
 
 --- Write a function which checks if a ;Tree; is balanced.
 --- A ;Tree; is balanced if the number of leaves in the left and right subtree of every
 --- node differ by at most 1.
-isBalanced : {A : Type} -> Tree A -> Bool;
-isBalanced := add-solution-here;
+isBalanced {A} : Tree A -> Bool := add-solution-here;
 
 --- Write a function that checks if a ;Nat; is prime
-isPrime : Nat -> Bool;
-isPrime := add-solution-here;
+isPrime : Nat -> Bool := add-solution-here;
