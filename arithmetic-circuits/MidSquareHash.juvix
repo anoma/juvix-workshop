@@ -7,24 +7,24 @@ module MidSquareHash;
 import Stdlib.Prelude open;
 import Stdlib.Data.Nat.Ord open;
 
---- ;pow; N is 2 ^ N
-pow : Nat -> Nat;
-pow zero := 1;
-pow (suc n) := 2 * pow n;
+--- `pow N` is 2 ^ N
+pow : Nat -> Nat
+  | zero := 1
+  | (suc n) := 2 * pow n;
 
---- ;hash'; N hashes a number with max N bits (i.e. smaller than 2^N) into 6 bits
+--- `hash' N` hashes a number with max N bits (i.e. smaller than 2^N) into 6 bits
 --- (i.e. smaller than 64) using the mid-square algorithm.
-hash' : Nat -> Nat -> Nat;
-hash' (suc n@(suc (suc m))) x :=
-  if
-    (x < pow n)
-    (hash' n x)
-    (mod (div (x * x) (pow m)) (pow 6));
-hash' _ x := x * x;
+hash' : Nat -> Nat -> Nat
+  | (suc n@(suc (suc m))) x :=
+    if
+      (x < pow n)
+      (hash' n x)
+      (mod (div (x * x) (pow m)) (pow 6))
+  | _ x := x * x;
 
 --- hash a number with max 16 bits (i.e. smaller than 2^16) into 6 bits
 --- (i.e. smaller than 64) using the mid-square algorithm.
 hash : Nat -> Nat := hash' 16;
 
-main : Nat -> Nat;
-main := hash;
+-- result: 3
+main : Nat := hash 1367;
