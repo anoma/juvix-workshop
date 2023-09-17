@@ -5,83 +5,82 @@ import Stdlib.Data.Nat.Ord open public;
 
 import Stdlib.Data.Int.Ord as Int;
 
--- Delete this function when you have completed the exercises
-axiom add-solution-here : {A : Type} -> A;
-
 --- Write a function that computes the exponentation n^m
-exp : Nat -> Nat -> Nat;
-exp _ zero := 1;
-exp x (suc n) := x * exp x n;
+exp (x : Nat) : Nat -> Nat
+  | zero := 1
+  | (suc n) := x * exp x n;
 
 --- Write a function that checks if a ;Nat; is prime
-isPrime : Nat -> Bool;
-isPrime n :=
+isPrime (n : Nat) : Bool :=
   let
-    go : Nat -> Bool;
-    go zero := true;
-    go (suc zero) := true;
-    go k@(suc k') := if (mod n k == 0) false (go k')
-  in case n
+    go : Nat -> Bool
+      | zero := true
+      | (suc zero) := true
+      | k@(suc k') := if (mod n k == 0) false (go k');
+  in case n of {
     | zero := false
     | suc zero := false
-    | suc k := go k;
+    | suc k := go k
+  };
 
 --- Write a function that returns the last element in a list
-last : {A : Type} -> List A -> Maybe A;
-last nil := nothing;
-last (x :: nil) := just x;
-last (_ :: xs) := last xs;
+last {A} : List A -> Maybe A
+  | nil := nothing
+  | (x :: nil) := just x
+  | (_ :: xs) := last xs;
 
 --- Write a function that reverses a list
-rev : {A : Type} -> List A -> List A;
-rev xs := for (acc := nil) (x in xs) x :: acc;
+rev {A : Type} (xs : List A) : List A :=
+  for (acc := nil) (x in xs)
+    x :: acc;
 
 --- Write a function that computes the maximum element in a list of natural numbers
-maximum : List Nat -> Nat;
-maximum xs := for (acc := 0) (x in xs) if (x > acc) x acc;
+maximum (xs : List Nat) : Nat :=
+  for (acc := 0) (x in xs)
+    if (x > acc) x acc;
 
 --- Write a function that computes the list of partial sums of a list of natural numbers
-sums : List Nat -> List Nat;
-sums xs := reverse $ fst $ for (acc, s := nil, 0) (x in xs) x + s :: acc, x + s;
+sums (xs : List Nat) : List Nat :=
+  reverse
+    $ fst
+    $ for (acc, s := nil, 0) (x in xs)
+        x + s :: acc, x + s;
 
 --- Write a function that computes the first element in a list that satisfies a predicate
-findFirst : {A : Type} -> (A -> Bool) -> List A -> Maybe A;
-findFirst _ nil := nothing;
-findFirst p (x :: xs) := if (p x) (just x) (findFirst p xs);
+findFirst {A} (p : A -> Bool) : List A -> Maybe A
+  | nil := nothing
+  | (x :: xs) := if (p x) (just x) (findFirst p xs);
 
 --- Write a function that returns the longest initial sublist of elements that satisfy a predicate
-takeWhile : {A : Type} -> (A -> Bool) -> List A -> List A;
-takeWhile _ nil := nil;
-takeWhile p (x :: xs) := if (p x) (x :: takeWhile p xs) nil;
+takeWhile {A} (p : A -> Bool) : List A -> List A
+  | nil := nil
+  | (x :: xs) := if (p x) (x :: takeWhile p xs) nil;
 
--- Write a function which computes the length of a longest continuous sublist of elements satisfying a predicate
-longest : {A : Type} -> (A -> Bool) -> List A -> Nat;
-longest p xs :=
+--- Write a function which computes the length of a longest continuous sublist of elements satisfying a predicate
+longest {A : Type} (p : A -> Bool) (xs : List A) : Nat :=
   -- `len` is the length of the longest sublist found so far
   -- `len'` is the length of the longest sublist ending at the current element
-  case
-    for (len, len' := 0, 0) (x in xs)
-      if (p x) (len, len' + 1) (max len len', 0)
-  | (len, len') := max len len';
+  case for (len, len' := 0, 0) (x in xs)
+         if (p x) (len, len' + 1) (max len len', 0) of {len, len' :=
+    max len len'};
 
 type Tree (A : Type) :=
-  | leaf : A -> Tree A
-  | node : Tree A -> Tree A -> Tree A;
+  | leaf A
+  | node (Tree A) (Tree A);
 
 --- Write a function that counts the total number of leaves in a tree
-countLeaves : {A : Type} -> Tree A -> Nat;
-countLeaves (leaf _) := 1;
-countLeaves (node l r) := countLeaves l + countLeaves r;
+countLeaves {A} : Tree A -> Nat
+  | (leaf _) := 1
+  | (node l r) := countLeaves l + countLeaves r;
 
 --- Write a function which checks if a ;Tree; is balanced.
 --- A ;Tree; is balanced if the number of leaves in the left and right subtree of every
 --- node differ by at most 1.
-isBalanced : {A : Type} -> Tree A -> Bool;
-isBalanced {A} :=
+isBalanced {A} : Tree A -> Bool :=
   let
-    go : Tree A -> Bool × Nat;
-    go (leaf _) := true, 1;
-    go (node l r) :=
-      case go l, go r
-      | (bl, nl), (br, nr) := (bl && br && sub nr nl <= 1 && sub nl nr <= 1), nl + nr;
+    go : Tree A -> Bool × Nat
+      | (leaf _) := true, 1
+      | (node l r) :=
+        case go l, go r of {(bl, nl), br, nr :=
+          (bl && br && sub nr nl <= 1 && sub nl nr <= 1), nl + nr};
   in fst ∘ go;
