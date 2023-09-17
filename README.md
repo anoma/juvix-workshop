@@ -68,7 +68,7 @@ There are also binaries for the Juvix compiler available to download
 
 We have set up a GitHub codespace with a pre-configured workspace, allowing you to seamlessly dive into the workshop without the hassle of any installations.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anoma/juvix-eth-workshop?quickstart=1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anoma/juvix-workshop?quickstart=1)
 
 ## IDE Setup
 
