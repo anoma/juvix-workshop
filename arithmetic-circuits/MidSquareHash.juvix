@@ -26,5 +26,4 @@ hash' : Nat -> Nat -> Nat
 --- (i.e. smaller than 64) using the mid-square algorithm.
 hash : Nat -> Nat := hash' 16;
 
--- result: 3
-main : Nat := hash 1367;
+main : Nat -> Nat := hash;
