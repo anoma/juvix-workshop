@@ -61,8 +61,10 @@ longest {A : Type} (p : A -> Bool) (xs : List A) : Nat :=
   -- `len` is the length of the longest sublist found so far
   -- `len'` is the length of the longest sublist ending at the current element
   case for (len, len' := 0, 0) (x in xs)
-         if (p x) (len, len' + 1) (max len len', 0) of {len, len' :=
-    max len len'};
+         if (p x) 
+            (len, len' + 1) 
+            (max len len', 0) of 
+  {  len, len' := max len len'};
 
 type Tree (A : Type) :=
   | leaf A
@@ -78,9 +80,15 @@ countLeaves {A} : Tree A -> Nat
 --- node differ by at most 1.
 isBalanced {A} : Tree A -> Bool :=
   let
-    go : Tree A -> Bool × Nat
+    go : Tree A -> 
+      Bool -- returns the value if the given tree is balanced
+      × Nat -- returns the number of leaves in the given tree
       | (leaf _) := true, 1
       | (node l r) :=
-        case go l, go r of {(bl, nl), br, nr :=
-          (bl && br && sub nr nl <= 1 && sub nl nr <= 1), nl + nr};
+        case go l, go r of 
+          { (isLeftBalance, nl), (isRightBalance, nr) :=
+                (isLeftBalance && isRightBalance && 
+                     sub nr nl <= 1 
+                  && sub nl nr <= 1), 
+              nl + nr};
   in fst ∘ go;

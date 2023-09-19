@@ -48,7 +48,11 @@ Alice publishes a _partial transaction_ to the network that consumes two resourc
 * 1 **A** resource
 * 2 **B** resources
 
-and creates a new resource containing a logic function which encodes her intent, i.e she wants to participate in a transaction that contains a partial transaction in which she receives either 1 **Dolphin** and **2 B** (i.e her **A** resource was spent) or 1 **Dolphin** and 1 **A** (i.e her **1 B** was spent).
+and creates a new resource containing a logic function which encodes her intent,
+i.e she wants to participate in a transaction that contains a partial
+transaction in which she receives either 1 **Dolphin** and **2 B** (i.e her
+**A** resource was spent) or 1 **Dolphin** and 1 **A** (i.e her **1 B** was
+spent).
 
 <img alt="alice partial transaction" width="600" src="../.resources/alice_partial_tx_1028.png">
 
